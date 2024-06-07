@@ -3,6 +3,7 @@ import { CategoryService } from './category.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
 import { JwtAuthGuard } from 'src/guards/jwt-auth.guard';
+import { AuthorGuard } from 'src/guards/author.guard';
 
 @Controller('category')
 export class CategoryController {
@@ -21,21 +22,21 @@ export class CategoryController {
     return this.categoryService.findAll(req.user.id);
   }
 
-  @Get('findOne/:id')
-  @UseGuards(JwtAuthGuard)
+  @Get(':type/:id')
+  @UseGuards(JwtAuthGuard, AuthorGuard)
   findOne(@Param('id') id: string) {
     return this.categoryService.findOne(id);
   }
 
-  @Patch('update/:id')
-  @UseGuards(JwtAuthGuard)
+  @Patch(':type/:id')
+  @UseGuards(JwtAuthGuard, AuthorGuard)
   @UsePipes(new ValidationPipe())
   update(@Param('id') id: string, @Body() updateCategoryDto: UpdateCategoryDto) {
     return this.categoryService.update(id, updateCategoryDto);
   }
 
-  @Delete('delete/:id')
-  @UseGuards(JwtAuthGuard)
+  @Delete(':type/:id')
+  @UseGuards(JwtAuthGuard, AuthorGuard)
   remove(@Param('id') id: string) {
     return this.categoryService.remove(id);
   }

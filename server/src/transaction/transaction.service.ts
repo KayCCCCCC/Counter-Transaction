@@ -23,6 +23,7 @@ export class TransactionService {
     if (!newTransaction) {
       throw new BadRequestException('Error in create transaction!')
     }
+    console.log('newTransaction: ', newTransaction)
     return await this.transactionRepository.save(newTransaction);
   }
 
@@ -30,6 +31,9 @@ export class TransactionService {
     const transactions = await this.transactionRepository.find({
       where: {
         user: { id: id }
+      },
+      relations: {
+        category: true
       },
       order: {
         createdAt: 'DESC'
@@ -126,8 +130,6 @@ export class TransactionService {
       }
     })
     const total = transactions.reduce((acc, obj) => acc + obj.amount, 0)
-    return {
-      total
-    }
+    return total
   }
 }
