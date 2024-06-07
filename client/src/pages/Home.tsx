@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 const Home: FC = () => {
     return (
-        <div>Home</div>
+        <div className='text-green-600 font-bold text-3xl'>Home</div>
     )
 }
 

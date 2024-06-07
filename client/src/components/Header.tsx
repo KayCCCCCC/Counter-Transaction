@@ -29,10 +29,10 @@ const Header: FC = () => {
                             <NavLink to={'/'} className={({ isActive }) => isActive ? 'text-white' : 'text-white/50'}>Home</NavLink>
                         </li>
                         <li>
-                            <NavLink to={'/categories'} className={({ isActive }) => isActive ? 'text-white' : 'text-white/50'}>Category</NavLink>
+                            <NavLink to={'/transactions'} className={({ isActive }) => isActive ? 'text-white' : 'text-white/50'}>Transaction</NavLink>
                         </li>
                         <li>
-                            <NavLink to={'/transactions'} className={({ isActive }) => isActive ? 'text-white' : 'text-white/50'}>Transaction</NavLink>
+                            <NavLink to={'/categories'} className={({ isActive }) => isActive ? 'text-white' : 'text-white/50'}>Category</NavLink>
                         </li>
                     </ul>
                 )
