@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  server:
+    build: .
+    ports:
+      - 3001:3000
+    environment:
+      DB_HOST: postgres
+      DB_USER: postgres
+      DB_PASSWORD: 123456
+      DB_NAME: budget
+      DB_PORT: 5432
+    depends_on:
+      - postgres
+    networks:
+      - dev-network-nest
+
+  postgres:
+    image: postgres:alpine
+    restart: always
+    env_file: ./.env
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: budget
+    ports:
+      - 5437:5432
+    volumes:
+      - pg_data_nest:/var/lib/postgresql/data
+    networks:
+      - dev-network-nest
+
+networks:
+  dev-network-nest:
+
+
+volumes:
+  pg_data_nest:
