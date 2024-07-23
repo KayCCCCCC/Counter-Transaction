@@ -1,21 +1,21 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "declaration": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "module": "commonjs", // Output format (CommonJS)
+    "declaration": true, // Generate type definition files (.d.ts)
+    "removeComments": true, // Remove comments from output
+    "emitDecoratorMetadata": true, // Required for NestJS decorators
+    "experimentalDecorators": true, // Required for NestJS decorators
+    "allowSyntheticDefaultImports": true, // Allow modern import syntax
+    "target": "ES2021", // Target JavaScript version (ECMAScript 2021)
+    "sourceMap": true, // Generate source maps for debugging
+    "outDir": "./dist", // Output directory for compiled files
+    "baseUrl": "./", // Base directory for resolving modules
+    "incremental": true, // Enable incremental compilation
+    "skipLibCheck": true, // Skip library check (might introduce compatibility issues)
+    "strictNullChecks": false, // Allow implicit `any` for variables
+    "noImplicitAny": false, // Allow implicit `any` for variables
+    "strictBindCallApply": false, // Allow non-strict function calls
+    "forceConsistentCasingInFileNames": false, // Don't enforce filename casing consistency
+    "noFallthroughCasesInSwitch": false // Allow fallthrough cases in switch statements
   }
 }

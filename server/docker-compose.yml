@@ -1,7 +1,7 @@
-version: "3.9"
 services:
   server:
     build: .
+    container_name: server
     ports:
       - 3001:3000
     environment:
@@ -16,7 +16,8 @@ services:
       - dev-network-nest
 
   postgres:
-    image: postgres:alpine
+    image: postgres
+    container_name: db
     restart: always
     env_file: ./.env
     environment:
@@ -24,7 +25,7 @@ services:
       POSTGRES_PASSWORD: 123456
       POSTGRES_DB: budget
     ports:
-      - 5437:5432
+      - 5438:5432
     volumes:
       - pg_data_nest:/var/lib/postgresql/data
     networks:

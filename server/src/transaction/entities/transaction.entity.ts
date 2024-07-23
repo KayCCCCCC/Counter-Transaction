@@ -1,10 +1,19 @@
-import { Category } from "src/category/entities/category.entity";
-import { User } from "src/user/entities/user.entity";
-import { Column, CreateDateColumn, Entity, IsNull, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Category } from "src/category/entities/category.entity"
+import { User } from "src/user/entities/user.entity"
+import {
+    Column,
+    CreateDateColumn,
+    Entity,
+    IsNull,
+    JoinColumn,
+    ManyToOne,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn
+} from "typeorm"
 
 @Entity()
 export class Transaction {
-    @PrimaryGeneratedColumn('uuid', { name: 'transaction_id' })
+    @PrimaryGeneratedColumn("uuid", { name: "transaction_id" })
     id: string
 
     @Column()
@@ -14,19 +23,19 @@ export class Transaction {
     type: string
 
     @ManyToOne(() => User, (user) => user.transactions)
-    @JoinColumn({ name: 'user_id' })
+    @JoinColumn({ name: "user_id" })
     user: User
 
-    @ManyToOne(() => Category, (category) => category.transactions, { onDelete: 'SET NULL' })
-    @JoinColumn({ name: 'category_id' })
+    @ManyToOne(() => Category, (category) => category.transactions, { onDelete: "SET NULL" })
+    @JoinColumn({ name: "category_id" })
     category: Category
 
     @Column()
     amount: number
 
     @CreateDateColumn()
-    createdAt: Date;
+    createdAt: Date
 
     @UpdateDateColumn()
-    updatedAt: Date;
+    updatedAt: Date
 }

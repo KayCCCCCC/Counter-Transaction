@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import TransactionForm from '../components/TransactionForm'
 import { instance } from '../api/axios.api'
 import { ICategory, IResponseTransactionLoader, ITransaction } from '../types/types'
@@ -97,7 +97,7 @@ const Transactions: FC = () => {
             </div>
             {/* Transaction Table */}
             <div className='my-5'>
-                <TransactionTable limit={7} />
+                <TransactionTable limit={5} />
             </div>
         </>
     )

@@ -12,7 +12,7 @@ export class CreateTransactionDto {
 
     @IsString()
     @MinLength(6)
-    type: 'expense' | 'income'
+    type: "expense" | "income"
 
     @IsNotEmpty()
     category: Category

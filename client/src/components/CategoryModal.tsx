@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Form } from 'react-router-dom';
 
 interface ICategoryModal {

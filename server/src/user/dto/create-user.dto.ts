@@ -3,6 +3,6 @@ export class CreateUserDto {
     @IsEmail()
     email: string
 
-    @MinLength(6, { message: 'Password must be more than 6 character' })
+    @MinLength(6, { message: "Password must be more than 6 character" })
     password: string
 }
