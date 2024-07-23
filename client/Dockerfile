@@ -1,6 +1,6 @@
 FROM node
 
-WORKDIR /client
+WORKDIR /test-react
 
 COPY package.json .
 RUN npm i
