@@ -7,7 +7,7 @@ const Layout: FC = () => {
         <React.Fragment>
             <div className='min-h-screen bg-slate-900 pb=20 font-roboto text-white'>
                 <Header />
-                <div className='container'>
+                <div className=''>
                     <Outlet />
                 </div>
             </div>
