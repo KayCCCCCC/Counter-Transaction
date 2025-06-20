@@ -10,7 +10,7 @@ export class TransactionService {
     constructor(
         @InjectRepository(Transaction)
         private readonly transactionRepository: Repository<Transaction>
-    ) {}
+    ) { }
 
     async create(createTransactionDto: CreateTransactionDto, id: string) {
         const newTransaction = {
